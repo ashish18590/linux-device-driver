@@ -1,0 +1,38 @@
+[23790.638596] Info : helloworld driver init function
+[23790.638603] Request_irq return value : 0 
+[23791.246490] Got Interrupt on wifi network card : 1 
+[23793.248537] Got Interrupt on wifi network card : 2 
+[23794.937377] Got Interrupt on wifi network card : 3 
+[23794.938273] Got Interrupt on wifi network card : 4 
+[23794.992521] Got Interrupt on wifi network card : 5 
+[23795.251366] Got Interrupt on wifi network card : 6 
+[23797.253844] Got Interrupt on wifi network card : 7 
+[23799.256458] Got Interrupt on wifi network card : 8 
+[23799.805260] Got Interrupt on wifi network card : 9 
+[23799.805800] Got Interrupt on wifi network card : 10 
+
+
+
+
+adahiya@adahiya-desktop:~/workspace/ldd/linux-device-driver/3.interrupt_handling$ cat /proc/interrupts | more
+            CPU0       CPU1       CPU2       CPU3       
+   0:         10          0          0          0  IR-IO-APIC    2-edge      timer
+   1:         45          0         10          0  IR-IO-APIC    1-edge      i8042
+   8:          0          0          0          1  IR-IO-APIC    8-edge      rtc0
+   9:        101         11          0          0  IR-IO-APIC    9-fasteoi   acpi
+  14:          0          0          0          0  IR-IO-APIC   14-fasteoi   INT344B:00
+  16:          0          0          0          0  IR-IO-APIC   16-fasteoi   i2c_designware.0, idma64.0
+  17:         66          0          0        740  IR-IO-APIC   17-fasteoi   i2c_designware.1, idma64.1
+  20:          0          0          0          0  IR-IO-APIC   20-fasteoi   idma64.2
+  22:          0          0          0          0  IR-IO-APIC   22-fasteoi   idma64.3, pxa2xx-spi.3
+ 109:          4          0          0          0  IR-IO-APIC  109-fasteoi   ELAN1300:00
+ 120:          0          0          0          0  DMAR-MSI    0-edge      dmar0
+ 121:          0          0          0          0  DMAR-MSI    1-edge      dmar1
+ 122:          0          0          0          0  IR-PCI-MSI 458752-edge      PCIe PME, pciehp
+ 123:          0          0          0          5  IR-PCI-MSI 468992-edge      aerdrv, PCIe PME
+ 124:          0      11438        538          0  IR-PCI-MSI 327680-edge      xhci_hcd
+ 125:        189     124528          0          0  IR-PCI-MSI 376832-edge      ahci[0000:00:17.0]
+ 126:          0         25          0          0  IR-PCI-MSI 360448-edge      mei_me
+ 127:       1926        101     582757          0  IR-PCI-MSI 32768-edge      i915
+ 129:       1559          0        198     135974  IR-PCI-MSI 1048576-edge      ath10k_pci, ashish-interrupt-handler
+
